@@ -6,15 +6,16 @@ import { CounterState } from "../store/counter/types";
 import { incrementCounter, decrementCounter } from "../store/counter/action";
 
 interface CounterProps {
-  increment: () => void;
-  decrement: () => void;
-  count: number;
+  readonly increment: () => void;
+  readonly decrement: () => void;
+  count: any;
 }
 
 const Counter = ({ increment, decrement, count }: CounterProps) => {
+  console.log(count);
   return (
     <div>
-      <h1>Counter: {count}</h1>
+      <h1>Counter: {count.count}</h1>
       <button onClick={increment}>-</button>
       <button onClick={decrement}>+</button>
     </div>

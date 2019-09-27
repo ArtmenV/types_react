@@ -2,7 +2,7 @@ import { CounterActionType, CounterState, CounterActions } from "./types";
 import { Action } from "redux";
 
 const initialState: CounterState = {
-  count: 0
+  count: 5
 };
 
 export const count = (
