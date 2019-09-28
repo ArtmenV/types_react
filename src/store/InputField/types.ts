@@ -11,7 +11,8 @@ export interface Notes {
 }
 
 export enum NotesActionTypes {
-  ADD_NOTE = "@@form/ADD_NOTE"
+  ADD_NOTE = "@@form/ADD_NOTE",
+  DELETE_NOTE = "@@form/DELETE_NOTE"
 }
 
 export interface ActionTypesForm extends Action {
@@ -19,4 +20,9 @@ export interface ActionTypesForm extends Action {
   payload: Note;
 }
 
-export type ActionsType = ActionTypesForm;
+export interface ActionTypesFormDelete extends Action {
+  type: NotesActionTypes.DELETE_NOTE;
+  payload: Note;
+}
+
+export type ActionsType = ActionTypesForm | ActionTypesFormDelete;

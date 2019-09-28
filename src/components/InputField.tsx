@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { formAdd } from "../store/InputField/action";
 import { Note } from "../store/InputField/types";
+import styles from "./InputField.module.css";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 // interface IState {
@@ -23,15 +24,17 @@ export const InputField: React.FC = () => {
   };
 
   return (
-    <form onSubmit={HandleSubmit}>
-      <label htmlFor="Добавить записку"></label>
-      <input
-        placeholder="введите вашу заметку"
-        value={value}
-        type="text"
-        onChange={event => setValue(event.target.value)}
-        required
-      />
+    <form onSubmit={HandleSubmit} className={styles.main__form}>
+      <div className={styles.main__form_container}>
+        <label htmlFor="Добавить записку"></label>
+        <input
+          placeholder="введите вашу заметку"
+          value={value}
+          type="text"
+          onChange={event => setValue(event.target.value)}
+          required
+        />
+      </div>
     </form>
   );
 };

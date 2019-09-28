@@ -15,6 +15,11 @@ export const NotesReducer = (
   switch (action.type) {
     case NotesActionTypes.ADD_NOTE:
       return { ...state.notes, notes: [...state.notes, action.payload] };
+    case NotesActionTypes.DELETE_NOTE:
+      return {
+        ...state.notes,
+        notes: state.notes.filter(note => note.id !== action.payload)
+      };
 
     default:
       return state;
