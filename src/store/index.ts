@@ -1,25 +1,25 @@
+import { NotesReducer } from "./InputField/reducer";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 
-import {count} from "./counter/reducer";
-import { CounterState } from "./counter/types";
+import { count } from "./counter/reducer";
 
-const reducer = combineReducers({
-    count
+const rootReducer = combineReducers({
+  count,
+  NotesReducer
 });
 
-export interface State {
-    count: CounterState;
-}
+export type AppState = ReturnType<typeof rootReducer>;
+
+// export interface State {
+//   count: CounterState;
+//   NotesReducer: Notes;
+// }
 
 const composeEnhancers =
-    (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const configureStore = (initialState?: State) =>
-    createStore(
-        reducer,
-        initialState,
-        composeEnhancers(applyMiddleware())
-    );
+const configureStore = (initialState?: AppState) =>
+  createStore(rootReducer, initialState, composeEnhancers(applyMiddleware()));
 
 const store = configureStore();
 
