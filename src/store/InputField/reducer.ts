@@ -20,6 +20,15 @@ export const NotesReducer = (
         ...state.notes,
         notes: state.notes.filter(note => note.id !== action.payload)
       };
+    case NotesActionTypes.IMPORTANT_NOTE:
+      return {
+        ...state.notes,
+        notes: state.notes.map(note => ({
+          ...note,
+          important:
+            note.id === action.payload ? !note.important : note.important
+        }))
+      };
 
     default:
       return state;
