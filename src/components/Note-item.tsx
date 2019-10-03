@@ -11,14 +11,14 @@ import { Note } from "../store/InputField/types";
 //   important: boolean,
 //   deleteNotes: () => : any
 // }
-export const NoteItem = ({ text, deleteNotes, id }: any) => {
+export const NoteItem = ({ text, deleteNotes, id, importantNote }: any) => {
   return (
     <li className={styles.notes__list_item}>
       {text}
       <div className="notes__list_group_button">
         <button
           className={styles.notes__list_button_important}
-          // onClick={() => addImportantAction(note.id)}
+          onClick={() => importantNote(id)}
         >
           !
         </button>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AppState } from "../store/index";
 import styles from "./Notes.module.css";
 import { deleteAction } from "../store/InputField/action";
+import { importantAction } from "../store/InputField/action";
 import { Note } from "../store/InputField/types";
 import { NoteItem } from "./Note-item";
 
@@ -18,6 +19,10 @@ export const Notel = () => {
     dispatch(deleteAction(id));
   };
 
+  const importantNote = (id: any) => {
+    dispatch(importantAction(id));
+  };
+
   return (
     <ul className={styles.notes__list}>
       {notes.map(note => (
@@ -25,6 +30,7 @@ export const Notel = () => {
           key={note.id}
           text={note.text}
           deleteNotes={deleteNotes}
+          importantNote={importantNote}
           id={note.id}
         />
       ))}
