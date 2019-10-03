@@ -9,7 +9,7 @@ import { Note } from "../store/InputField/types";
 //   text: string,
 //   id: number,
 //   important: boolean,
-//   deleteNotes: () => : void
+//   deleteNotes: () => : any
 // }
 export const NoteItem = ({ text, deleteNotes, id }: any) => {
   return (

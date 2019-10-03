@@ -2,9 +2,9 @@ import { Notes, NotesActionTypes, ActionsType } from "./types";
 
 export const initialState: Notes = {
   notes: [
-    { text: "вася", id: 1, important: false },
-    { text: "петя", id: 2, important: true },
-    { text: "коля", id: 3, important: false }
+    { text: "Купить новую планету", id: 1, important: false },
+    { text: "Пробежать 100 километров", id: 2, important: true },
+    { text: "Подружиться с кенгуру", id: 3, important: false }
   ]
 };
 

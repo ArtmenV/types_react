@@ -5,9 +5,7 @@ import { Note } from "../store/InputField/types";
 import styles from "./InputField.module.css";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
-// interface IState {
-//   value: string;
-// }
+
 export const InputField: React.FC = () => {
   const [value, setValue] = useState<string>("");
   const dispatch = useDispatch();
@@ -26,7 +24,7 @@ export const InputField: React.FC = () => {
   return (
     <form onSubmit={HandleSubmit} className={styles.main__form}>
       <div className={styles.main__form_container}>
-        <label htmlFor="Добавить записку"></label>
+        <label htmlFor="дневник"></label>
         <input
           placeholder="введите вашу заметку"
           value={value}
