@@ -25,15 +25,22 @@ export const Notel = () => {
 
   return (
     <ul className={styles.notes__list}>
-      {notes.map(note => (
-        <NoteItem
-          key={note.id}
-          text={note.text}
-          deleteNotes={deleteNotes}
-          importantNote={importantNote}
-          id={note.id}
-        />
-      ))}
+      {notes.map(note => {
+        const style = [styles.notes__list_item];
+        if (note.important === true) {
+          style.push(styles.important);
+        }
+        return (
+          <NoteItem
+            stylesName={style.join(" ")}
+            key={note.id}
+            text={note.text}
+            deleteNotes={deleteNotes}
+            importantNote={importantNote}
+            id={note.id}
+          />
+        );
+      })}
     </ul>
   );
 };

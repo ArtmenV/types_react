@@ -8,11 +8,6 @@
   margin: 0;
   width: 90%;
 }
-.important {
-  color: white;
-  background-color: rgb(100, 240, 255);
-  font-weight: 900;
-}
 
 .notes__list_item {
   display: flex;
@@ -25,6 +20,12 @@
   border-radius: 5px;
   border: 1px solid rgba(4, 154, 209, 0.6);
   margin-bottom: 12px;
+}
+
+.important {
+  color: white;
+  background-color: rgb(100, 240, 255);
+  font-weight: 900;
 }
 
 .notes__list_button_important {

@@ -11,9 +11,15 @@ import { Note } from "../store/InputField/types";
 //   important: boolean,
 //   deleteNotes: () => : any
 // }
-export const NoteItem = ({ text, deleteNotes, id, importantNote }: any) => {
+export const NoteItem = ({
+  text,
+  deleteNotes,
+  id,
+  importantNote,
+  stylesName
+}: any) => {
   return (
-    <li className={styles.notes__list_item}>
+    <li className={stylesName}>
       {text}
       <div className="notes__list_group_button">
         <button
