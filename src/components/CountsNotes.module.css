@@ -1,0 +1,6 @@
+.main__countes_note {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0 0 0;
+  font-size: 1.4rem;
+}
