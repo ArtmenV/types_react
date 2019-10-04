@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { formAdd } from "../store/InputField/action";
 import { Note } from "../store/InputField/types";
 import styles from "./InputField.module.css";
+import { AppState } from "../store/index";
 
 type FormEvent = React.FormEvent<HTMLFormElement>;
 
 export const InputField: React.FC = () => {
   const [value, setValue] = useState<string>("");
+
+  const countNotes = useSelector(
+    (state: AppState) => state.NotesReducer.notes.length
+  );
   const dispatch = useDispatch();
 
   const HandleSubmit = (event: FormEvent): void => {

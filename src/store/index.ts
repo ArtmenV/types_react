@@ -1,10 +1,7 @@
 import { NotesReducer } from "./InputField/reducer";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 
-import { count } from "./counter/reducer";
-
 const rootReducer = combineReducers({
-  count,
   NotesReducer
 });
 

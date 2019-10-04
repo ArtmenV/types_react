@@ -1,9 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "../store/index";
 import styles from "./Notes.module.css";
-import { deleteAction } from "../store/InputField/action";
-import { Note } from "../store/InputField/types";
 
 // interface NotesProps {
 //   text: string,
@@ -11,6 +7,7 @@ import { Note } from "../store/InputField/types";
 //   important: boolean,
 //   deleteNotes: () => : any
 // }
+
 export const NoteItem = ({
   text,
   deleteNotes,

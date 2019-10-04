@@ -4,13 +4,12 @@ import { AppState } from "../store/index";
 import styles from "./Notes.module.css";
 import { deleteAction } from "../store/InputField/action";
 import { importantAction } from "../store/InputField/action";
-import { Note } from "../store/InputField/types";
 import { NoteItem } from "./Note-item";
 
 // interface NotesProps {
 //   notes: [];
 // }
-export const Notel = () => {
+export const Notes = () => {
   const notes = useSelector((state: AppState) => state.NotesReducer.notes);
   console.log(notes);
   const dispatch = useDispatch();
